@@ -2,7 +2,7 @@
     "header": {
         "options": [
             {
-                "option": "Start"
+                "option": "Home"
             },
             {
                 "option": "Abount"
@@ -34,7 +34,7 @@
         
     },
     "start": {
-        "title": "Start",
+        "title": "Home",
         "img": "assets/img/my-photo.webp",
         "name": "Erick Wladimir Arevalo Navarro",
         "collageDegree": "Systems Engineer",

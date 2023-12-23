@@ -27,5 +27,5 @@ import { LanguagesComponent } from './content/languages/languages.component';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'portfolio';
+  
 }
