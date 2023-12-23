@@ -1,0 +1,23 @@
+<section class="container" [id]="deleteSpace(dataLanguages?.title)">
+
+    <h2 class="title">{{dataLanguages?.title}}</h2>
+
+    @for (item of dataLanguages?.items; track $index) {
+
+        <div class="content">
+            <article class="content-arti">
+                
+                <div>
+                    <h4>{{item.name}}</h4>
+        
+                    <i-tabler name="arrow-big-right"></i-tabler>
+        
+                    <h4>{{item.level}}</h4>
+
+                </div>
+    
+            </article>
+        </div>
+    }
+
+</section>

@@ -1,0 +1,23 @@
+<div class="container" [id]="deleteSpace(dataStart?.title)">
+    <section class="content-img">
+        @if ( !dataStart?.img ) {
+            <div class="spinner">
+                <app-spinner></app-spinner>
+            </div>
+        }
+        @else {
+            <img [src]="dataStart?.img" alt="My photo">
+        }
+        
+    </section>
+
+    <section class="content-text">
+        <h1>{{dataStart?.name}}</h1>
+        <p>
+            <span>{{dataStart?.collageDegree}}</span>
+            <span class="divider"></span>
+            <span>{{dataStart?.position}}</span>
+        </p>
+        
+    </section>
+</div>

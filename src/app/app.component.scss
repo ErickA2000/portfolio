@@ -1,0 +1,11 @@
+.container-components{
+    margin-right: 10%;
+    margin-left: 10%;
+}
+
+@media (min-width: 800px) {
+    .container-components {
+        margin-right: 20%;
+        margin-left: 20%;
+    }
+}

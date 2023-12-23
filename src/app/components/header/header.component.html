@@ -1,0 +1,64 @@
+<mat-toolbar color="accent">
+
+    <header class="header">
+        <div>
+            <button mat-icon-button (click)="openUrl('https://linkedin.com/in/erick-arevalo-951081222')">
+                <i-tabler name="brand-linkedin"></i-tabler>
+            </button>
+
+            <button mat-icon-button (click)="openUrl('https://github.com/ErickA2000')">
+                <i-tabler name="brand-github"></i-tabler>
+            </button>
+
+            <button mat-icon-button (click)="changeMode()">
+                <i-tabler #asIconTheme [name]="iconTheme"></i-tabler>
+            </button>
+            
+            <button mat-icon-button [matMenuTriggerFor]="menuLang">
+                <i-tabler name="language-hiragana"></i-tabler>
+            </button>
+
+            <mat-menu #menuLang="matMenu">
+
+                @for (language of dataHeader?.languages; track language.iso ) {
+
+                    <button mat-menu-item (click)="changeLanguage(language.iso)">{{language.language}}</button>
+                }
+
+                
+            </mat-menu>
+
+        </div>
+        
+        <!-- Menu button phone version -->
+        <button mat-icon-button [matMenuTriggerFor]="menuNav" class="menu-button">
+            <mat-icon>menu</mat-icon>
+        </button>
+        <mat-menu #menuNav="matMenu" class="custom-background-com">
+
+            @for (option of dataHeader?.options; track $index) {
+
+                <button mat-menu-item routerLink="." [fragment]="deleteSpace(option.option)"
+                    [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact: true}">
+                    {{option.option}}
+                </button>
+            }
+        </mat-menu>
+
+        <!-- Nav desktop version -->
+
+        <nav class="nav">
+
+            @for (option of dataHeader?.options; track $index) {
+
+                <button mat-button color="primary" routerLink="." [fragment]="deleteSpace(option.option)"
+                    [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact: true}">
+                    {{option.option}}
+                </button>
+            }
+
+        </nav>
+
+    </header>
+
+</mat-toolbar>

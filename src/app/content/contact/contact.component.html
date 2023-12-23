@@ -1,0 +1,95 @@
+<section class="container" [id]="deleteSpace(dataContact?.title)">
+
+    <article>
+        <h2 class="title">{{dataContact?.title}}</h2>
+
+        <button mat-icon-button (click)="openUrl('https://linkedin.com/in/erick-arevalo-951081222')">
+            <i-tabler name="brand-linkedin"></i-tabler>
+        </button>
+
+        <button mat-icon-button (click)="openUrl('https://github.com/ErickA2000')">
+            <i-tabler name="brand-github"></i-tabler>
+        </button>
+    </article>
+
+    <form class="form" [formGroup]="contactForm">
+
+        <div class="form-fields">
+            <mat-form-field appearance="outline">
+                <mat-label [ngClass]="cssClass">{{dataContact?.name}}</mat-label>
+                <input type="text" matInput [ngClass]="cssClass" formControlName="name">
+                
+                @if ( checkExistError(contactForm.get('name')?.errors, 'minlength') ) {
+
+                    <mat-error>{{dataContact?.errorMessages?.name?.min}}</mat-error>
+                }
+
+                @else if ( checkExistError(contactForm.get('name')?.errors, 'required') ) {
+                    <mat-error>{{dataContact?.errorMessages?.name?.required}}</mat-error>
+                }
+
+                @else if ( checkExistError(contactForm.get('name')?.errors, 'pattern') ) {
+                    <mat-error>{{dataContact?.errorMessages?.name?.letter}}</mat-error>
+                }
+
+            </mat-form-field>
+    
+            <mat-form-field appearance="outline">
+                <mat-label [ngClass]="cssClass">{{dataContact?.company}}</mat-label>
+                <input type="text" matInput [ngClass]="cssClass" formControlName="company">
+
+                @if ( checkExistError(contactForm.get('company')?.errors, 'minlength') ) {
+                    <mat-error>{{dataContact?.errorMessages?.company?.min}}</mat-error>
+                }
+            </mat-form-field>
+    
+            <mat-form-field appearance="outline">
+                <mat-label [ngClass]="cssClass">{{dataContact?.mail}}</mat-label>
+                <input type="text" matInput [ngClass]="cssClass" formControlName="email">
+
+                @if ( checkExistError(contactForm.get('email')?.errors, 'required') ) {
+                    <mat-error>{{dataContact?.errorMessages?.mail?.required}}</mat-error>
+                }
+
+                @else if ( checkExistError(contactForm.get('email')?.errors, 'pattern') ) {
+                    <mat-error>{{dataContact?.errorMessages?.mail?.invalid}}</mat-error>
+                }
+
+            </mat-form-field>
+    
+            <mat-form-field appearance="outline">
+                <mat-label [ngClass]="cssClass">{{dataContact?.message}}</mat-label>
+                <textarea cols="30" rows="10" matInput [ngClass]="cssClass" formControlName="message"></textarea>
+
+                @if ( checkExistError(contactForm.get('message')?.errors, 'required')) {
+                    <mat-error>{{dataContact?.errorMessages?.message?.required}}</mat-error>
+                }
+
+                @else if ( checkExistError(contactForm.get('message')?.errors, 'minlength') ) {
+                    <mat-error>{{dataContact?.errorMessages?.message?.min}}</mat-error>
+                }
+
+                @else if( checkExistError(contactForm.get('message')?.errors, 'maxlength') ) {
+                    <mat-error>{{dataContact?.errorMessages?.message?.max}}</mat-error>
+                }
+            </mat-form-field>
+
+        </div>
+
+        <button mat-raised-button type="button" color="accent" (click)="sendEmail()">
+            
+            @if ( isSending ) {
+                <mat-spinner #asSpinner></mat-spinner>
+            }
+
+            @else if ( isSend ) {
+                <mat-icon color="primary" #asIcon>done</mat-icon>
+            }
+
+            @else {
+                {{dataContact?.button}}
+            }
+        </button>
+    </form>
+
+</section>

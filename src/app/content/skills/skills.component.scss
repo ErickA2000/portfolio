@@ -1,0 +1,45 @@
+.content-skill {
+
+    margin-top: 2rem;
+
+    .content-skill__title {
+        font-size: 1.8rem;
+    }
+
+    .group-skills {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+
+        .group-skills__item{
+
+            text-align: center;
+
+            h3{
+                font-size: 1.5rem;
+            }
+        }
+    }
+}
+
+i-tabler{
+    width: 100px;
+    height: auto;
+}
+
+@media (min-width: 800px) {
+    .content{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+    .group-skills__item{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        align-items: center;
+        gap: 1rem;
+        width: 100%;
+    }
+}

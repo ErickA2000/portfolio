@@ -1,0 +1,48 @@
+mat-toolbar{
+    position: fixed;
+    top: 0;
+    z-index: 1;
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.menu-button{
+    display: block;
+}
+
+.nav{
+    display: none;
+}
+
+@media ( min-width: 800px) {
+    .header {
+        margin-left: 20%;
+        margin-right: 20%;
+        flex-direction: row-reverse;
+    }
+
+    .menu-button{
+        display: none;
+    }
+
+    .nav{
+        display: block;
+    }
+}
+
+.rotate-center{
+    animation:rotate-center 0.4s
+} 
+@keyframes rotate-center{
+    0%{
+        transform:rotate(0)
+    }
+    100%{
+        transform:rotate(360deg)
+    }
+}

@@ -1,0 +1,48 @@
+.color-light {
+    color: black !important;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 4rem;
+}
+
+.form {
+    .form-fields {
+        margin-top: 2rem;
+        mat-form-field {
+            width: 100%;
+        }
+    }
+
+    button {
+        width: 100%;
+    }
+}
+
+@media (min-width: 800px) {
+    .container {
+        flex-direction: row;
+        align-items: baseline;
+        gap: 3rem;
+    }
+}
+
+mat-spinner {
+    height: 30px !important;
+    width: 30px !important;
+}
+
+.slide-left {
+    animation: slide-left 0.4s linear both;
+}
+
+@keyframes slide-left {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100px);
+    }
+}

@@ -1,0 +1,208 @@
+{
+    "header": {
+        "options": [
+            {
+                "option": "Inicio"
+            },
+            {
+                "option": "Sobre mi"
+            },
+            {
+                "option": "Habilidades"
+            },
+            {
+                "option": "Idiomas"
+            },
+            {
+                "option": "Proyectos"
+            },
+            {
+                "option": "Contáctame"
+            }
+        ],
+        "languages": [
+
+            {
+                "language": "Español",
+                "iso": "es"
+            },
+            {
+                "language": "Ingles",
+                "iso": "en"
+            }
+        ]
+        
+    },
+    "start": {
+        "title": "Inicio",
+        "img": "assets/img/my-photo.webp",
+        "name": "Erick Wladimir Arevalo Navarro",
+        "collageDegree": "Ingenieria de Sistemas",
+        "position": "Desarrollador Web"
+    },
+    "abount": {
+        "title": "Sobre mi",
+        "p1": "Soy una persona que busca el mejoramiento personal cada día a través de las experiencias diarias. Recien termino mi carrera en ingeniería de sistemas con la aspiración de convertirme en un profesional que ayude a generar productos de calidad donde este ejerciendo mi profesión",
+        "p2": "Habilidades en lenguajes de  programación como Typescript/Javascript, así como el uso de frameworks y herramientas como NodeJS, Angular, Express, Git y Docker",
+        "p3": "Tengo conocimiento en el uso de tecnologías del stack MEAN desarrollando proyectos de aula aplicando este stack en la creación de REST API y aplicaciones web con Angular"
+    },
+    "skills": {
+        "title": "Habilidades",
+        "languages": {
+            "title": "Lenguajes",
+            "items": [
+                {
+                    "title": "TypeScript",
+                    "icon": "brand-typescript"
+                },
+                {
+                    "title": "JavaScript",
+                    "icon": "brand-javascript"
+                },
+                {
+                    "title": "HTML",
+                    "icon": "file-type-html"
+                },
+                {
+                    "title": "CSS",
+                    "icon": "file-type-css"
+                }
+            ]
+        },
+        "libraryFrameworks": {
+            "title": "Librerias & Frameworks",
+            "items": [
+                {
+                    "title": "Angular",
+                    "icon": "brand-angular"
+                },
+                {
+                    "title": "Angular Material",
+                    "icon": "brand-angular"
+                },
+                {
+                    "title": "Express",
+                    "icon": "assets/icons/expressjs-icon.svg"
+                },
+                {
+                    "title": "JSON Web Token",
+                    "icon": "assets/icons/jwt-3.svg"
+                }
+            ]
+        },
+        "toolsPlatforms": {
+            "title": "Herramientas & Plataformas",
+            "items": [
+                {
+                    "title": "MongoDB",
+                    "icon": "brand-mongodb"
+                },
+                {
+                    "title": "MySQL",
+                    "icon": "brand-mysql"
+                },
+                {
+                    "title": "PostgreSQL",
+                    "icon": "assets/icons/postgresql-icon.svg"
+                },
+                {
+                    "title": "NodeJS",
+                    "icon": "brand-nodejs"
+                },
+                {
+                    "title": "Git",
+                    "icon": "brand-git"
+                },
+                {
+                    "title": "Docker",
+                    "icon": "brand-docker"
+                }
+            ]
+        }
+    },
+    "languages": {
+        "title": "Idiomas",
+        "items": [
+            {
+                "name": "Español",
+                "level": "Nativo"
+            },
+            {
+                "name": "Ingles",
+                "level": "A2"
+            }
+        ]
+    },
+    "projects": {
+        "title": "Proyectos",
+        "items": [
+            {
+                "date": "Marzo 2023 a Noviembre 2023",
+                "position": "Desarrollador Web",
+                "name": "Trabajo de grado",
+                "location": "Colombia",
+                "activities": [
+                    "Desarrollo de aplicación web en Angular, tipo tienda en linea de ropa de niña y dama",
+                    "Desarrollo de aplicación web en Angular, tipo panel de administracion",
+                    "Desarrollo de backend en microservicios con NodeJS, Express, MongoDB, Kafka, Docker"
+                ]
+            },
+            {
+                "date": "Junio 2023 a Agosto 2023",
+                "position": "Desarrollador Web",
+                "name": "Estancia programa Delfin",
+                "location": "México",
+                "activities": [
+                    "Desarrollo de aplicación web en Angular, tipo tienda en linea de papeleria",
+                    "Desarrollo de backend con NodeJS, Express, MySQL"
+                ]
+            }
+        ]
+    },
+    "contact": {
+        "title": "Contáctame",
+        "name": "Nombre completo",
+        "company": "Nombre de la empresa",
+        "mail": "E-mail",
+        "message": "Mensaje",
+        "button": "Enviar",
+        "errorMessages": {
+            "name": {
+                "required": "El nombre es requerido",
+                "letter": "Solo se aceptan letras",
+                "min": "Minimo 2 caracteres",
+                "max": "",
+                "invalid": ""
+            },
+            "company": {
+                "required": "",
+                "letter": "",
+                "min": "Minimo 2 caracteres",
+                "max": "",
+                "invalid": ""
+            },
+            "mail": {
+                "required": "El email es requerido",
+                "letter": "",
+                "min": "",
+                "max": "",
+                "invalid": "El email no es valido"
+            },
+            "message": {
+                "required": "El mensage es requerido",
+                "letter": "",
+                "min": "Mínimo 50 caracteres",
+                "max": "Máximo 2000 caracteres",
+                "invalid": ""
+            },
+            "form": {
+                "required": "",
+                "letter": "",
+                "min": "",
+                "max": "",
+                "invalid": "Hay campos incorrectos",
+                "button": "Cerrar"
+            }
+        }
+    }
+}

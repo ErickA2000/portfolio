@@ -1,0 +1,126 @@
+@use '@angular/material' as mat;
+
+@include mat.core();
+
+$md-primary-violet-palette: (
+    50 : #efe9ff,
+    100 : #e2d7ff,
+    200 : #cdb7ff,
+    300 : #b38cff,
+    400 : #a55fff,
+    500 : #a13aff,
+    600 : #a418ff,
+    700 : #9d0ef4,
+    800 : #7d0fc4,
+    900 : #631699,
+    950 : #12041B,
+    A100 : #a16bff,
+    A200 : #8038ff,
+    A400 : #5f05ff,
+    A700 : #5500eb,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #ffffff,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        950 : #ffffff,
+        A100 : #000000,
+        A200 : #ffffff,
+        A400 : #ffffff,
+        A700 : #ffffff,
+    )
+);
+
+
+$background-light: map_get($md-primary-violet-palette , 50 );
+$background-dark: map_get($md-primary-violet-palette , 950 );
+
+// $my-palette: mat.define-palette($md-primary-violet-palette);
+
+$primary-light-theme: mat.define-palette( $md-primary-violet-palette, 950 );
+$accent-light-theme: mat.define-palette( $md-primary-violet-palette, A100, A200, A400 );
+
+$primary-dark-theme: mat.define-palette( $md-primary-violet-palette, 200 );
+$accent-dark-theme: mat.define-palette( $md-primary-violet-palette, 900 );
+
+//set background
+@function mat-set-background($theme, $backgroundColor) {
+    $palette-color : map-get($theme, color);
+    $background: map-get($palette-color, background);
+    $background: map_merge($background, (background: $backgroundColor));
+    $palette-color: map_merge($palette-color, (background: $background));
+    @return map_merge($theme, (color: $palette-color));
+}
+
+//light mode
+// mat.define-palette( $md-primary-violet-palette, 500 )  -->accent
+$light-theme: mat.define-light-theme(
+    (
+        color: (
+            primary: $primary-light-theme,
+            accent: $accent-light-theme,
+        ),
+    )
+);
+
+
+$light-theme: mat-set-background( $light-theme, $background-light );
+
+
+@include mat.core-color($light-theme);
+@include mat.toolbar-color($light-theme);
+@include mat.menu-color($light-theme);
+@include mat.button-color($light-theme);
+
+
+//dark mode
+$dark-theme: mat.define-dark-theme(
+    (
+        color: (
+            primary: $primary-dark-theme,
+            accent: $accent-dark-theme,
+        ),
+    )
+);
+
+
+$dark-theme: mat-set-background( $dark-theme, $background-dark );
+
+@media ( prefers-color-scheme: dark ){
+    
+    @include mat.core-theme($dark-theme);
+    @include mat.toolbar-color($dark-theme);
+    @include mat.menu-color($dark-theme); 
+    @include mat.button-color($dark-theme);
+    @include mat.icon-color($dark-theme);
+}
+
+.dark-mode{
+    @include mat.core-color($dark-theme);
+    @include mat.toolbar-color($dark-theme);
+    @include mat.menu-color($dark-theme);
+    @include mat.button-color($dark-theme);
+    @include mat.icon-color($dark-theme);
+    // .mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-notched-outline__leading,.mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-notched-outline__notch, .mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-notched-outline__trailing {
+    //     border-color: white !important;
+    // }
+}
+
+.light-mode {
+    @include mat.core-color($light-theme);
+    @include mat.toolbar-color($light-theme);
+    @include mat.menu-color($light-theme);
+    @include mat.button-color($light-theme);
+    @include mat.icon-color($light-theme);
+
+    .mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-notched-outline__leading,.mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-notched-outline__notch, .mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-notched-outline__trailing {
+        border-color: black !important;
+        
+    }
+}

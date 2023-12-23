@@ -1,0 +1,112 @@
+<section class="container" [id]="deleteSpace(dataSkills?.title)">
+
+    <h2 class="title">{{dataSkills?.title}}</h2>
+
+    <div class="content">
+
+        <article class="content-skill">
+            <h3 class="content-skill__title">{{dataSkills?.languages?.title}}</h3>
+    
+            <div class="group-skills">
+                @for (item of dataSkills?.languages?.items; track $index) {
+        
+                    <article class="group-skills__item">
+                        <h3>{{item.title}}</h3>
+                        <i-tabler [name]="item.icon"></i-tabler>
+                    </article>
+        
+                }
+            </div>
+    
+        </article>
+    
+        <article class="content-skill">
+            <h3 class="content-skill__title">{{dataSkills?.libraryFrameworks?.title}}</h3>
+    
+            <div class="group-skills">
+                @for (item of dataSkills?.libraryFrameworks?.items; track $index) {
+        
+                    <article class="group-skills__item">
+                        <h3>{{item.title}}</h3>
+        
+                        @if ( item.icon.includes('assets') ) {
+                            @if ( item.title.toLowerCase().includes('express') ) {
+        
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="100" height="100" [attr.fill]="colorFill">
+                                    <path
+                                        d="M32 24.795c-1.164.296-1.884.013-2.53-.957l-4.594-6.356-.664-.88-5.365 7.257c-.613.873-1.256 1.253-2.4.944l6.87-9.222-6.396-8.33c1.1-.214 1.86-.105 2.535.88l4.765 6.435 4.8-6.4c.615-.873 1.276-1.205 2.38-.883l-2.48 3.288-3.36 4.375c-.4.5-.345.842.023 1.325L32 24.795zM.008 15.427l.562-2.764C2.1 7.193 8.37 4.92 12.694 8.3c2.527 1.988 3.155 4.8 3.03 7.95H1.48c-.214 5.67 3.867 9.092 9.07 7.346 1.825-.613 2.9-2.042 3.438-3.83.273-.896.725-1.036 1.567-.78-.43 2.236-1.4 4.104-3.45 5.273-3.063 1.75-7.435 1.184-9.735-1.248C1 21.6.434 19.812.18 17.9c-.04-.316-.12-.617-.18-.92q.008-.776.008-1.552zm1.498-.38h12.872c-.084-4.1-2.637-7.012-6.126-7.037-3.83-.03-6.58 2.813-6.746 7.037z" />
+                                </svg>
+                            }
+        
+                            @else if ( item.title.toLowerCase().includes('json') ) {
+        
+                                <svg height="100" viewBox=".4 .3 99.7 100" width="100" xmlns="http://www.w3.org/2000/svg" [attr.fill]="colorFill">
+                                    <g fill-rule="evenodd">
+                                        <path d="m57.8 27.2-.1-26.9h-15l.1 26.9 7.5 10.3zm-15 46.1v27h15v-27l-7.5-10.3z" />
+                                        <path d="m57.8 73.3 15.8 21.8 12.1-8.8-15.8-21.8-12.1-3.9zm-15-46.1-15.9-21.8-12.1 8.8 15.8 21.8 12.2 3.9z"/>
+                                        <path d="m30.6 36-25.6-8.3-4.6 14.2 25.6 8.4 12.1-4zm31.8 18.2 7.5 10.3 25.6 8.3 4.6-14.2-25.6-8.3z"/>
+                                        <path d="m74.5 50.3 25.6-8.4-4.6-14.2-25.6 8.3-7.5 10.3zm-48.5 0-25.6 8.3 4.6 14.2 25.6-8.3 7.5-10.3z"/>
+                                        <path d="m30.6 64.5-15.8 21.8 12.1 8.8 15.9-21.8v-12.7zm39.3-28.5 15.8-21.8-12.1-8.8-15.8 21.8v12.7z"/>
+                                    </g>
+                                </svg>                                
+                            }
+                        }
+        
+                        @else {
+                            <i-tabler [name]="item.icon"></i-tabler>
+                        }
+        
+                    </article>
+                }
+            </div>
+    
+        </article>
+    
+        <article class="content-skill">
+            <h3 class="content-skill__title">{{dataSkills?.toolsPlatforms?.title}}</h3>
+    
+            <div class="group-skills">
+                @for (item of dataSkills?.toolsPlatforms?.items; track $index) {
+        
+                    <article class="group-skills__item">
+                        <h3>{{item.title}}</h3>
+        
+                        @if ( item.icon.includes('assets') ) {
+                            @if ( item.title.toLowerCase().includes('postgresql') ) {
+                                <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 96 92" fill="none">
+                                    <path
+                                        d="M48.0525 59.1782C47.7525 69.406 48.1275 79.7057 49.17 82.1782C50.2125 84.6507 52.4513 89.5454 60.1425 87.9713C66.5663 86.6524 68.9063 84.0973 69.9188 78.4587L72.2925 60.4288M38.835 7.90618C38.835 7.90618 4.02004 -5.73569 5.64004 25.2748C5.98504 31.8729 15.5025 75.2279 26.865 62.1107C31.0125 57.3202 34.7625 53.572 34.7625 53.572M57.6375 5.41571C56.4375 5.77508 77.0025 -1.78976 88.695 12.5241C92.82 17.5806 88.0388 38.2446 76.59 54.5243"
+                                        [attr.stroke]="colorFill" stroke-width="1.79" stroke-linecap="round" stroke-linejoin="round" />
+                                    <path
+                                        d="M76.5938 54.5171C76.5938 54.5171 77.3438 58.039 88.2188 55.8899C92.9701 54.9483 90.1088 58.5277 85.2938 60.6696C81.3413 62.4305 72.4763 62.8798 72.3301 60.454C71.9551 54.1829 76.995 56.0876 76.6313 54.5171C76.3013 53.1012 74.0438 51.714 72.5588 48.2496C71.2576 45.2308 54.7088 22.0512 77.1488 25.4904C77.9738 25.3287 71.2988 5.00601 50.2988 4.71132C29.2988 4.41663 29.9626 29.4543 29.9626 29.4543"
+                                        [attr.stroke]="colorFill" stroke-width="1.79" stroke-linecap="round" stroke-linejoin="bevel" />
+                                    <path
+                                        d="M42.1762 56.6663C39.2512 59.8 40.1137 60.3498 34.2637 61.5034C28.3462 62.6714 31.8262 64.7522 34.0912 65.2984C36.8437 65.9597 43.2112 66.8941 47.5162 61.1189C48.8287 59.358 47.5087 56.5548 45.7087 55.8433C44.8387 55.4983 43.6762 55.067 42.1837 56.6698L42.1762 56.6663Z"
+                                        [attr.stroke]="colorFill" stroke-width="1.79" stroke-linejoin="round" />
+                                    <path
+                                        d="M41.9849 56.6122C41.6849 54.7687 42.6149 52.5801 43.6087 50.0141C45.1012 46.1688 48.5437 42.3235 45.7912 30.1155C43.7399 21.0233 29.9662 28.2216 29.9662 29.4543C29.9662 30.6869 30.5887 35.7074 29.7412 41.5472C28.6274 49.1732 34.8037 55.6204 41.9137 54.9627"
+                                        [attr.stroke]="colorFill" stroke-width="1.79" stroke-linecap="round" stroke-linejoin="round" />
+                                    <path
+                                        d="M38.7076 29.2709C38.6439 29.6914 39.5139 30.8162 40.6426 30.9672C41.7714 31.1181 42.7351 30.2412 42.7989 29.8172C42.8626 29.3931 41.9926 28.9331 40.8639 28.7822C39.7351 28.6312 38.7639 28.8541 38.7076 29.2709Z"
+                                        fill="back" [attr.stroke]="colorFill" stroke-width="0.5975" />
+                                    <path
+                                        d="M73.0726 28.412C73.1326 28.8325 72.2664 29.9574 71.1376 30.1083C70.0089 30.2592 69.0376 29.3824 68.9814 28.9583C68.9251 28.5342 69.7876 28.0742 70.9164 27.9233C72.0451 27.7724 73.0164 27.9952 73.0726 28.412Z"
+                                        fill="back" [attr.stroke]="colorFill" stroke-width="0.2975" />
+                                    <path
+                                        d="M77.1075 25.4976C77.295 28.8038 76.365 31.0499 76.245 34.5682C76.0725 39.6785 78.7875 45.5291 74.6963 51.3869"
+                                        [attr.stroke]="colorFill" stroke-width="1.79" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            }
+                        }
+        
+                        @else {
+                            <i-tabler [name]="item.icon"></i-tabler>
+                        }
+        
+                    </article>
+                }
+            </div>
+    
+        </article>
+    </div>
+</section>
